@@ -21,7 +21,7 @@ SKILLS_DATA = [
 ]
 
 async def seed():
-    client = AsyncIOMotorClient(settings.MONGODB_URL)
+    client = AsyncIOMotorClient(settings.MONGO_URI)
     db = client[settings.MONGODB_DB_NAME]
 
     sk_count = await db.skills.count_documents({})
